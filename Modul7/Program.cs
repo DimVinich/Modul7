@@ -11,18 +11,26 @@ namespace Modul7
         }
     }
 
+	class Herb { }
+	class Fruit : Herb { }
+	class Vegetable : Herb { }
+	class Berries : Herb { }
+	class Apple : Fruit { }
+	class Banana : Berries { }
+	class Pear : Fruit { }
+	class Potato : Vegetable { }
+	class Carrot : Vegetable { }
+
 	class ProjectManager : Employee
     {
 		public string ProjectName;
 
 	}
-
 	class Developer : Employee
     {
 		public string ProgrammingLanguage;
 
 	}
-
 	class Employee
 	{
 		public string Name;
