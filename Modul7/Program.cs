@@ -13,7 +13,39 @@ namespace Modul7
         }
     }
 
+	class IndexingClass 
+	{
+	  private int[] array;
 
+	  public IndexingClass(int[] array) 
+	  {
+		this.array = array;
+	  }
+		public int this[int index]
+        {
+            get
+            {
+				if (index > 0 && index < array.Length)
+                {
+					return array[index];
+                }
+                else
+                {
+					return null;
+                }
+            }
+
+            set
+            {
+				if (index > 0 && index < array.Length)
+                {
+					array = value;
+                }
+            }
+        }
+		
+
+	}
 
 	class SmartHelper 
 	{
