@@ -13,6 +13,22 @@ namespace Modul7
         }
     }
 
+	class static Helper 
+	{
+		static void Swap(ref int aa, ref int ab)
+    {
+		int h;
+		h = aa;
+		aa = ab;
+		ab = aa;
+    }
+	  public static int Sum(int a, int b, int c) 
+	  {
+		return a + b + c;
+	  }
+	}
+
+
 	class IndexingClass 
 	{
 	  private int[] array;
@@ -43,8 +59,6 @@ namespace Modul7
                 }
             }
         }
-		
-
 	}
 
 	class SmartHelper 
