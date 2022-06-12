@@ -2,78 +2,78 @@
 
 namespace Modul7
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
+	class Program
+	{
+		static void Main(string[] args)
+		{
 			SmartHelper helper = new SmartHelper("Олег");
 			helper.Greetings("Грег");
 
-            Console.ReadLine();
-        }
-    }
+			Console.ReadLine();
+		}
+	}
 
-	class static Helper 
+	static class Helper
 	{
 		static void Swap(ref int aa, ref int ab)
-    {
-		int h;
-		h = aa;
-		aa = ab;
-		ab = aa;
-    }
-	  public static int Sum(int a, int b, int c) 
-	  {
-		return a + b + c;
-	  }
+		{
+			int h;
+			h = aa;
+			aa = ab;
+			ab = aa;
+		}
+		public static int Sum(int a, int b, int c)
+		{
+			return a + b + c;
+		}
 	}
 
 
-	class IndexingClass 
+	class IndexingClass
 	{
-	  private int[] array;
+		private int[] array;
 
-	  public IndexingClass(int[] array) 
-	  {
-		this.array = array;
-	  }
+		public IndexingClass(int[] array)
+		{
+			this.array = array;
+		}
 		public int this[int index]
-        {
-            get
-            {
+		{
+			get
+			{
 				if (index > 0 && index < array.Length)
-                {
+				{
 					return array[index];
-                }
-                else
-                {
-					return null;
-                }
-            }
+				}
+				else
+				{
+					return 0;
+				}
+			}
 
-            set
-            {
+			set
+			{
 				if (index > 0 && index < array.Length)
-                {
-					array = value;
-                }
-            }
-        }
+				{
+					array = 0;
+				}
+			}
+		}
 	}
 
-	class SmartHelper 
+	class SmartHelper
 	{
-	  private string name;
+		private string name;
 
-	  public SmartHelper(string name) 
-	  {
-		this.name = name;
-	  }
+		public SmartHelper(string name)
+		{
+			this.name = name;
+		}
 
-	  public void Greetings(string name) 
-	  {
-		Console.WriteLine("Привет, {0}, я интеллектуальный помощник {1}", name, this.name);
-	  }
+		public void Greetings(string name)
+		{
+			Console.WriteLine("Привет, {0}, я интеллектуальный помощник {1}", name, this.name);
+		}
 	}
 
 	class Herb { }
@@ -87,12 +87,12 @@ namespace Modul7
 	class Carrot : Vegetable { }
 
 	class ProjectManager : Employee
-    {
+	{
 		public string ProjectName;
 
 	}
 	class Developer : Employee
-    {
+	{
 		public string ProgrammingLanguage;
 
 	}
@@ -136,8 +136,8 @@ namespace Modul7
 		}
 	}
 	enum FuelType
-    {
-        Gas = 0,
-        Electricity
-    }
+	{
+		Gas = 0,
+		Electricity
+	}
 }
