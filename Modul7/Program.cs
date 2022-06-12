@@ -55,7 +55,7 @@ namespace Modul7
 			{
 				if (index > 0 && index < array.Length)
 				{
-					array = 0;
+					array = null;
 				}
 			}
 		}
