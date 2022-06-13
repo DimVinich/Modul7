@@ -39,17 +39,16 @@ namespace Modul7Temp
 		}
 	}
 
-    //class HybridCar : Car
-    //{
-    //    public FuelType FuelType;
+    class HybridCar : Car<Engine> 
+	{
+        public FuelType FuelType;
+        public void ChangeFuelType(FuelType type)
+        {
+            FuelType = type;
+        }
+    }
 
-    //    public void ChangeFuelType(FuelType type)
-    //    {
-    //        FuelType = type;
-    //    }
-    //}
-
-    class Car<TEngine> : Transport where TEngine : Engine
+    class Car<TEngine> : Transport  where TEngine : Engine
 	{
 		public double Fuel;
 		public int Mileage;
@@ -61,7 +60,7 @@ namespace Modul7Temp
 			Mileage = 0;
 		}
 
-		public virtual void ChangePart<TPart>(T2 newPart) where TPart : CarPart { }
+		public virtual void ChangePart<TPart>(TPart newPart) where TPart : CarPart { }
 
 		public override void Move()
 		{
