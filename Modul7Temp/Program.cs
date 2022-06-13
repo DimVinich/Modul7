@@ -13,16 +13,19 @@ namespace Modul7Temp
 		}
 	}
 
-	class ElectricEngine { }
-	class GasEngine { }
+	class ElectricEngine : Engine { }
+	class GasEngine :Engine { }
+	class Engine { }
+
 	enum FuelType
 	{
 		Gas = 0,
 		Electricity
 	}
-	class Battery { }
-	class Differential { }
-	class Wheel { }
+	class CarPart { }
+	class Battery : CarPart { }
+	class Differential : CarPart { }
+	class Wheel : CarPart { }
 
 	abstract class Transport
 	{
@@ -35,16 +38,18 @@ namespace Modul7Temp
 			// ...
 		}
 	}
-	class HybridCar : Car
-	{
-		public FuelType FuelType;
 
-		public void ChangeFuelType(FuelType type)
-		{
-			FuelType = type;
-		}
-	}
-	class Car<T> : Transport
+    //class HybridCar : Car
+    //{
+    //    public FuelType FuelType;
+
+    //    public void ChangeFuelType(FuelType type)
+    //    {
+    //        FuelType = type;
+    //    }
+    //}
+
+    class Car<T> : Transport where T : Engine
 	{
 		public double Fuel;
 		public int Mileage;
@@ -56,7 +61,7 @@ namespace Modul7Temp
 			Mileage = 0;
 		}
 
-		public virtual void ChangePart<T2>(T2 newPart) { }
+		public virtual void ChangePart<T2>(T2 newPart) where T2 : CarPart { }
 
 		public override void Move()
 		{
@@ -70,15 +75,12 @@ namespace Modul7Temp
 		}
 	}
 
-
-
 	class Record<TId, TValue>
 	{
 		DateTime Date;
 		public TId Id;
 		public TValue Value;
 	}
-
 	static class IntEctensions
 	{
 		public static int GetNegative(this int ai)
