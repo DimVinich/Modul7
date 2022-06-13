@@ -13,6 +13,34 @@ namespace Modul7
 		}
 	}
 
+	static class IntEctensions
+    {
+		public static int GetNegative(this int ai)
+        {
+			if(ai > 0)
+            {
+				return ai * (-1);
+            }
+            else
+            {
+				return ai;
+            }
+        }
+
+		public static int GetPosotove(this int ai)
+        {
+			if (ai < 0)
+			{
+				return ai * (-1);
+			}
+			else
+			{
+				return ai;
+			}
+
+		}
+	}
+
 	static class Helper
 	{
 		static void Swap(ref int aa, ref int ab)
@@ -20,15 +48,13 @@ namespace Modul7
 			int h;
 			h = aa;
 			aa = ab;
-			ab = aa;
+			ab = h;
 		}
 		public static int Sum(int a, int b, int c)
 		{
 			return a + b + c;
 		}
 	}
-
-
 	class IndexingClass
 	{
 		private int[] array;
@@ -60,7 +86,6 @@ namespace Modul7
 			}
 		}
 	}
-
 	class SmartHelper
 	{
 		private string name;
@@ -75,7 +100,6 @@ namespace Modul7
 			Console.WriteLine("Привет, {0}, я интеллектуальный помощник {1}", name, this.name);
 		}
 	}
-
 	class Herb { }
 	class Fruit : Herb { }
 	class Vegetable : Herb { }
@@ -85,7 +109,6 @@ namespace Modul7
 	class Pear : Fruit { }
 	class Potato : Vegetable { }
 	class Carrot : Vegetable { }
-
 	class ProjectManager : Employee
 	{
 		public string ProjectName;
