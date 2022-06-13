@@ -13,6 +13,17 @@ namespace Modul7
 		}
 	}
 
+	class ElectricEngine { }
+	class GasEngine { }
+	enum FuelType
+	{
+		Gas = 0,
+		Electricity
+	}
+	class Battery { }
+	class Differential { }
+	class Wheel { }
+
 	abstract class Transport
 	{
 		public abstract void Move();
@@ -33,15 +44,11 @@ namespace Modul7
 			FuelType = type;
 		}
 	}
-	
-	class ElectricEngine { }
-	class GasEngine { }
-
 	class Car<T> : Transport 
 	{
 		public double Fuel;
 		public int Mileage;
-		public T Engine { get; set; }
+		public T Engine;
 
 		public Car()
 		{
@@ -49,6 +56,7 @@ namespace Modul7
 			Mileage = 0;
 		}
 
+		public virtual void ChangePart<T2>(T2 newPart) { }
 		public override void Move()
 		{
 			Mileage++;
@@ -60,12 +68,15 @@ namespace Modul7
 			Fuel = 50;
 		}
 	}
-	enum FuelType
-	{
-		Gas = 0,
-		Electricity
-	}
 
+
+
+	class Record<TId, TValue>
+    {
+		DateTime Date;
+		public TId Id;
+		public TValue Value;
+    }
 
 	static class IntEctensions
 	{
