@@ -49,11 +49,11 @@ namespace Modul7Temp
     //    }
     //}
 
-    class Car<T> : Transport where T : Engine
+    class Car<TEngine> : Transport where TEngine : Engine
 	{
 		public double Fuel;
 		public int Mileage;
-		public T Engine;
+		public TEngine Engine;
 
 		public Car()
 		{
@@ -61,7 +61,7 @@ namespace Modul7Temp
 			Mileage = 0;
 		}
 
-		public virtual void ChangePart<T2>(T2 newPart) where T2 : CarPart { }
+		public virtual void ChangePart<TPart>(T2 newPart) where TPart : CarPart { }
 
 		public override void Move()
 		{
