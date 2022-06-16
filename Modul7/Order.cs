@@ -79,6 +79,7 @@ namespace Modul7
         {
 			for (int i = 0; i < ArrProduct.Length; i++)
             {
+				Console.WriteLine("\n\n Дополнительная позиция № {0}", i + 1);
 				ArrProduct[i].PrintInfo();
             }
         }
