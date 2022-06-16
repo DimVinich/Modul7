@@ -28,11 +28,6 @@ namespace Modul7
 			Product = product;
         }
 
-		public void AddProduct() 
-		{ 
-
-		}
-
 		public void PrintOrder()
 		{
 			Console.WriteLine(" Заказ № {0} от {1} ", numOrder, dateOrder);
@@ -49,5 +44,44 @@ namespace Modul7
 			Console.WriteLine("\n Данные о продукте ");
 			Product.PrintInfo();
 		}
-	}
+
+		// ==================  Реализация индексатора для продуктов.
+		protected Product<Banana>[] ArrProduct;
+
+        public Product<Banana> this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < ArrProduct.Length)
+                {
+                    return ArrProduct[index];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                if (index >= 0 && index < ArrProduct.Length)
+                {
+                    ArrProduct[index] = value;
+                }
+            }
+        }
+
+        public void SetArrProduct(Product<Banana>[] arrProduct)
+        {
+            ArrProduct = arrProduct;
+        }
+
+		public void PrintArrProduct()
+        {
+			for (int i = 0; i < ArrProduct.Length; i++)
+            {
+				ArrProduct[i].PrintInfo();
+            }
+        }
+
+    }
 }

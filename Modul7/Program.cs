@@ -39,6 +39,19 @@ namespace Modul7
 			//	Печатаем заказ
 			order.PrintOrder();
 
+			// ================== Использования индексатора для продуктов
+			var arrProduct = new Product<Banana>[]
+			{
+				new Product<Banana>(banana, 10, 1),
+				new Product<Banana>(banana, 11, 2),
+				new Product<Banana>(banana, 12, 3)
+			};
+
+			order.SetArrProduct(arrProduct);
+
+			Console.WriteLine("\n\t\t Так же были в качетсве бонуса доложены новинки бананов");
+			order.PrintArrProduct();
+
             Console.ReadKey();
 		}
 	}
