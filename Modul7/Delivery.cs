@@ -6,22 +6,34 @@ using System.Threading.Tasks;
 
 namespace Modul7
 {
-	class Order<TDelivery> where TDelivery : Delivery
-	{
-		public TDelivery Delivery;
-		public void DisplayAddress()
-		{
-			Console.WriteLine(Delivery.Address);
-		}
-
-	}
 
 	abstract class Delivery
 	{
 		public string Address;
+
+		public virtual void PrintInfo()
+        {
+			Console.WriteLine("Адрес доставки:  " + Address);
+        }
 	}
 
-	class HomeDelivery : Delivery { /* ... */ }
+	class HomeDelivery : Delivery 
+	{
+		public string sayCustomer;
+
+        public HomeDelivery(string address, string sayCustomer)
+        {
+			Address = address;
+			this.sayCustomer = sayCustomer;
+        }
+
+        public override void PrintInfo()
+        {
+            base.PrintInfo();
+			Console.WriteLine("Передать на словах:  " + sayCustomer);
+		}
+	}
+
 	class PickPointDelivery : Delivery { /* ... */ }
 	class ShopDelivery : Delivery { /* ... */ }
 }
